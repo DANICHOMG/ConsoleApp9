@@ -65,15 +65,10 @@ internal class Program
         string third = Console.ReadLine();
         
         DateTime date = DateTime.Now;
-        try
-        {
-            Console.Write("Please, your date of birth: ");
-            date = DateTime.Parse(Console.ReadLine()); 
-        }
-        catch (FormatException)
-        {
-            Console.WriteLine("No, i don`t know this.");
-        }
+        
+        Console.Write("Please, your date of birth: ");
+        date = DateTime.Parse(Console.ReadLine()); 
+        
         Array.Resize(ref contacts, contacts.Length + 1);
         contacts[^1] = (first, second, third, date);
     }
@@ -115,15 +110,11 @@ internal class Program
         string second = Console.ReadLine();
 
         DateTime date = DateTime.Now;
-        try
-        {
-            Console.Write("Date of burth: ");
-            date = DateTime.Parse(Console.ReadLine());
-        }
-        catch (FormatException)
-        {
-            Console.WriteLine("What? I don`t know this format.");
-        }
+        Console.Write("Date of burth: ");
+        date = DateTime.Parse(Console.ReadLine());
+        
+        Console.WriteLine("What? I don`t know this format.");
+        
 
         contacts[id] = (first, third, second, date);
     }
